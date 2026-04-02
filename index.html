@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arcade Panel</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <main class="shell">
+      <div class="device-mode-panel">
+        <button
+          class="ghost-button device-mode-button"
+          id="device-mode-button"
+          type="button"
+          aria-label="Toggle device mode"
+        >
+          Mode: Computer
+        </button>
+      </div>
+
+      <section class="info-panel">
+        <p class="eyebrow">Arcade Panel</p>
+        <h1>Choose A Game</h1>
+        <p class="lede">
+          Pick a cabinet, check the rules, and launch it into the live stage.
+          Each game keeps its own best score.
+        </p>
+
+        <div class="library-heading">
+          <span>Game Library</span>
+          <strong class="library-current" data-selected-tag>Selected: Signal Loop</strong>
+        </div>
+
+        <div class="game-library" id="game-library" aria-label="Available games"></div>
+
+        <div class="wallet-card">
+          <span class="wallet-label">Arcade Bank</span>
+          <strong class="wallet-value" data-bank>0 credits</strong>
+          <p class="wallet-copy" data-bank-note>
+            Earn score in any cabinet and spend it on permanent upgrades.
+          </p>
+        </div>
+
+        <section class="store-panel" aria-labelledby="store-title">
+          <div class="store-heading">
+            <span id="store-title">Upgrade Store</span>
+            <strong class="store-tag">Permanent</strong>
+          </div>
+          <div class="store-grid" id="store-grid" aria-label="Upgrade store"></div>
+        </section>
+
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span class="stat-label">Score</span>
+            <strong class="stat-value" data-score>0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Best</span>
+            <strong class="stat-value" data-best>0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label" data-primary-label>Shield</span>
+            <strong class="stat-value" data-primary-value>3 / 3</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label" data-secondary-label>Streak</span>
+            <strong class="stat-value" data-secondary-value>0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Game</span>
+            <strong class="stat-value" data-mode-name>Signal Loop</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Status</span>
+            <strong class="stat-value" data-status>Ready</strong>
+          </article>
+        </div>
+
+        <div class="rulebook">
+          <h2 data-rulebook-title>Signal Loop Brief</h2>
+          <p data-mode-summary>
+            Balanced arcade loop built around timing, streaks, and shield
+            management.
+          </p>
+          <p data-mode-objective>
+            Blue pulses score. Red glitches damage your shield. Long streaks
+            repair the reactor.
+          </p>
+          <p data-mode-controls>
+            Keyboard: use A, D, or arrow keys. Touch or mouse: drag anywhere on
+            the arena to steer.
+          </p>
+        </div>
+
+        <div class="action-row">
+          <button class="action-button" id="sidebar-button" type="button">
+            Launch Signal Loop
+          </button>
+          <button class="ghost-button" id="panel-button" type="button" hidden>
+            Choose Game
+          </button>
+        </div>
+      </section>
+
+      <section class="stage-panel">
+        <div class="stage-toolbar">
+          <div>
+            <p class="stage-kicker">Live Stage</p>
+            <h2 class="stage-title" data-stage-title>Signal Loop</h2>
+          </div>
+          <button
+            class="ghost-button stage-ghost"
+            id="stage-panel-button"
+            type="button"
+            hidden
+          >
+            Choose Game
+          </button>
+        </div>
+
+        <div class="canvas-frame">
+          <canvas
+            class="game-canvas"
+            id="game"
+            width="900"
+            height="900"
+            aria-label="Arcade game area"
+          ></canvas>
+
+          <div class="overlay" id="overlay">
+            <div class="overlay-card">
+              <p class="overlay-tag" id="overlay-tag">Arcade Panel</p>
+              <h2 id="overlay-title">Signal Loop</h2>
+              <p id="overlay-body">
+                Pick from the game library and launch the selected cabinet when
+                you are ready.
+              </p>
+              <div class="overlay-actions">
+                <button class="action-button" id="overlay-button" type="button">
+                  Launch Signal Loop
+                </button>
+                <button
+                  class="ghost-button"
+                  id="overlay-panel-button"
+                  type="button"
+                  hidden
+                >
+                  Choose Game
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
